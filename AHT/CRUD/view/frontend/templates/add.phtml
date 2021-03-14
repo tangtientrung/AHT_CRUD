@@ -1,0 +1,30 @@
+<form method='post' action="<?php echo $this->getUrl("post/post/save")?>">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter a name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="url">Url</label>
+        <input type="text" class="form-control" id="url" placeholder="Enter a url" name="url">
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="text" class="form-control" id="image" placeholder="Enter a image" name="image">
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" class="form-control" id="content" placeholder="Enter a content" name="content">
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <input class="form-check-input" type="radio" name="status" id="status1" value="1" checked/>
+        <label class="form-check-label" for="status1">
+            Enable
+        </label>
+        <input class="form-check-input" type="radio" name="status" id="status2" value="0">
+        <label class="form-check-label" for="status2">
+            Disable
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

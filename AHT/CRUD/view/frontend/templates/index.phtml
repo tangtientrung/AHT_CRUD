@@ -1,0 +1,39 @@
+<div class="row col-md-12 centered">
+    <table class="table table-striped custab">
+        <thead>
+        <a href="/magento/post/post/add" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new post</a>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Image</th>
+            <th>Content</th>
+            <th>Status</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+            <th class="text-center">Action</th>
+        </tr>
+        </thead>
+            <?php
+                $status="";
+                foreach ($block->getPost() as $key=>$post){
+                    if($post->getStatus()==1)
+                        $status="Enable";
+                    else
+                        $status="Disable";
+                    echo '<tr>';
+                    echo "<td>" . $post->getId() . "</td>";
+                    echo "<td>" . $post->getName() . "</td>";
+                    echo "<td>" . $post->getUrl() . "</td>";
+                    echo "<td>" . $post->getImage() . "</td>";
+                    echo "<td>" . $post->getContent() . "</td>";
+                    echo "<td>" . $status. "</td>";
+                    echo "<td>" . $post->getCreatedAt() . "</td>";
+                    echo "<td>" . $post->getUpdatedAt() . "</td>";
+                    echo "<td class='text-center'><a class='btn btn-info btn-xs' href='/magento/post/post/edit/id/" . $post->getId() . "' ><span class='glyphicon glyphicon-edit'></span> Edit</a> 
+                                <a href='/magento/post/post/delete/id/" . $post->getId() . "' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
+                    echo "</tr>";
+                }
+            ?>
+    </table>
+</div>
